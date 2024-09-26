@@ -90,7 +90,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QHBoxLayout *buttonLayout = new QHBoxLayout();
     
     layout->addWidget(expr_entry);
-    layout->addWidget(result_text_edit);
+    // layout->addWidget(result_text_edit);
     layout->addWidget(latex_label);
     layout->addWidget(createButtonGrid());
     buttonLayout->addWidget(calculateButton);
@@ -136,6 +136,7 @@ std::string MainWindow::trans(std::string str) {
         str.replace(pos, 2, "^");
         pos += 1; // 移动到下一个位置
     }
+
     pos = 0;
     while ((pos = str.find('*', pos)) != std::string::npos) {
         if (pos < str.size() - 1 && isalpha(str[pos + 1])) {
@@ -152,13 +153,10 @@ void MainWindow::renderLatexToLabel(QLabel *label, const QString &latex) {
     QFile::remove("latex.png");
     // 使用正则表达式将除法替换为分数形式
     QString processedLatex = latex;
-    QRegularExpression divisionRegex("(\\d+)\\s*/\\s*(\\d+)");
-    processedLatex.replace(divisionRegex, "\\dfrac{\\1}{\\2}");
 
     // 使用 matplotlib 渲染 LaTeX 字体
     int width = 1600;
     int height = 200;
-
     QProcess process;
     process.start("python3", QStringList() << "-c" <<
                   "import matplotlib.pyplot as plt; "
@@ -189,14 +187,16 @@ void MainWindow::renderLatexToLabel(QLabel *label, const QString &latex) {
     }
 }
 
-void MainWindow::on_buttonClicked()
-{
+void MainWindow::on_buttonClicked() {
     QPushButton *button = qobject_cast<QPushButton*>(sender());
     if (button) {
         QString text = button->text();
         if (text == "C") {
             expr_entry->clear(); // 清除输入框内容
+            expr_entry->setFocus(); // 设置焦点
             result_text_edit->clear();
+            result_text_edit->setText(0);
+            renderLatexToLabel(latex_label, "$0$");
         } else if(text == '=') {
             if(result_text_edit->toPlainText().isEmpty()) {
                 on_calculateButtonClicked(); // 点击等号按钮时执行计算
@@ -244,5 +244,18 @@ void MainWindow::on_numericCalculateButtonClicked() {
 void MainWindow::display_result(const std::string &result) {
     QString result_qstr = QString::fromStdString(result);
     result_text_edit->setPlainText(result_qstr);
-    renderLatexToLabel(latex_label, QString::fromStdString("$" + result + "$"));
+
+    // 使用正则表达式将 ^ 后面的数字用 {} 括起来
+    QString latex = QString::fromStdString(result);
+    QRegularExpression expRegex(R"((\w+|\([^()]+\)|\{[^{}]+\})\^(\w+|\([^()]+\)|\{[^{}]+\}))");
+    latex.replace(expRegex, "\\1^{\\2}");
+
+    // 使用正则表达式将除法替换为分数形式
+    QRegularExpression divisionRegex(R"((\w+(\^\{[^{}]+\})?|\([^()]+\)(\^\{[^{}]+\})?|\{[^{}]+\}(\^\{[^{}]+\})?)\s*/\s*(\w+(\^\{[^{}]+\})?|\([^()]+\)(\^\{[^{}]+\})?|\{[^{}]+\}(\^\{[^{}]+\})?))");
+    latex.replace(divisionRegex, "\\frac{\\1}{\\5}");
+
+    latex = "$" + latex + "$";
+
+    std::cerr<<latex.toStdString()<<std::endl;
+    renderLatexToLabel(latex_label, latex);
 }

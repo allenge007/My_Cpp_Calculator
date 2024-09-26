@@ -26,7 +26,6 @@ public:
     ~MainWindow();
     std::string trans(std ::string);
     void renderLatexToLabel(QLabel *label, const QString &latex);
-    QString
 
 private slots:
     void on_buttonClicked();

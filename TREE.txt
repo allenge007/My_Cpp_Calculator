@@ -1,0 +1,210 @@
+.
+├── CMakeLists.txt
+├── CMakeLists.txt.user
+├── Project1_zh_CN.ts
+├── README.md
+├── TREE.txt
+├── build
+│   ├── CMakeCache.txt
+│   ├── CMakeFiles
+│   │   ├── 3.22.1
+│   │   │   ├── CMakeCCompiler.cmake
+│   │   │   ├── CMakeCXXCompiler.cmake
+│   │   │   ├── CMakeDetermineCompilerABI_C.bin
+│   │   │   ├── CMakeDetermineCompilerABI_CXX.bin
+│   │   │   ├── CMakeSystem.cmake
+│   │   │   ├── CompilerIdC
+│   │   │   │   ├── CMakeCCompilerId.c
+│   │   │   │   ├── a.out
+│   │   │   │   └── tmp
+│   │   │   └── CompilerIdCXX
+│   │   │       ├── CMakeCXXCompilerId.cpp
+│   │   │       ├── a.out
+│   │   │       └── tmp
+│   │   ├── CMakeDirectoryInformation.cmake
+│   │   ├── CMakeOutput.log
+│   │   ├── CMakeRuleHashes.txt
+│   │   ├── CMakeTmp
+│   │   ├── Makefile.cmake
+│   │   ├── Makefile2
+│   │   ├── SymbolicCalculator.dir
+│   │   │   ├── DependInfo.cmake
+│   │   │   ├── SymbolicCalculator_autogen
+│   │   │   │   ├── mocs_compilation.cpp.o
+│   │   │   │   └── mocs_compilation.cpp.o.d
+│   │   │   ├── build.make
+│   │   │   ├── cmake_clean.cmake
+│   │   │   ├── compiler_depend.internal
+│   │   │   ├── compiler_depend.make
+│   │   │   ├── compiler_depend.ts
+│   │   │   ├── depend.make
+│   │   │   ├── flags.make
+│   │   │   ├── link.txt
+│   │   │   ├── main.cpp.o
+│   │   │   ├── main.cpp.o.d
+│   │   │   ├── mainwindow.cpp.o
+│   │   │   ├── mainwindow.cpp.o.d
+│   │   │   └── progress.make
+│   │   ├── SymbolicCalculator_autogen.dir
+│   │   │   ├── AutogenInfo.json
+│   │   │   ├── AutogenUsed.txt
+│   │   │   ├── DependInfo.cmake
+│   │   │   ├── ParseCache.txt
+│   │   │   ├── build.make
+│   │   │   ├── cmake_clean.cmake
+│   │   │   ├── compiler_depend.make
+│   │   │   ├── compiler_depend.ts
+│   │   │   └── progress.make
+│   │   ├── TargetDirectories.txt
+│   │   ├── cmake.check_cache
+│   │   └── progress.marks
+│   ├── Makefile
+│   ├── SymbolicCalculator
+│   ├── SymbolicCalculator_autogen
+│   │   ├── EWIEGA46WW
+│   │   │   ├── moc_mainwindow.cpp
+│   │   │   └── moc_mainwindow.cpp.d
+│   │   ├── include
+│   │   │   └── ui_mainwindow.h
+│   │   ├── moc_predefs.h
+│   │   └── mocs_compilation.cpp
+│   ├── cmake_install.cmake
+│   └── latex.png
+├── main.cpp
+├── mainwindow.cpp
+├── mainwindow.h
+├── mainwindow.ui
+├── resources
+│   └── MathJax
+│       ├── CONTRIBUTING.md
+│       ├── LICENSE
+│       ├── README.md
+│       ├── bower.json
+│       ├── composer.json
+│       ├── es5
+│       │   ├── a11y
+│       │   │   ├── assistive-mml.js
+│       │   │   ├── complexity.js
+│       │   │   ├── explorer.js
+│       │   │   ├── semantic-enrich.js
+│       │   │   └── sre.js
+│       │   ├── adaptors
+│       │   │   └── liteDOM.js
+│       │   ├── core.js
+│       │   ├── input
+│       │   │   ├── asciimath.js
+│       │   │   ├── mml
+│       │   │   │   ├── entities.js
+│       │   │   │   └── extensions
+│       │   │   │       ├── mml3.js
+│       │   │   │       └── mml3.sef.json
+│       │   │   ├── mml.js
+│       │   │   ├── tex
+│       │   │   │   └── extensions
+│       │   │   │       ├── action.js
+│       │   │   │       ├── all-packages.js
+│       │   │   │       ├── ams.js
+│       │   │   │       ├── amscd.js
+│       │   │   │       ├── autoload.js
+│       │   │   │       ├── bbox.js
+│       │   │   │       ├── boldsymbol.js
+│       │   │   │       ├── braket.js
+│       │   │   │       ├── bussproofs.js
+│       │   │   │       ├── cancel.js
+│       │   │   │       ├── cases.js
+│       │   │   │       ├── centernot.js
+│       │   │   │       ├── color.js
+│       │   │   │       ├── colortbl.js
+│       │   │   │       ├── colorv2.js
+│       │   │   │       ├── configmacros.js
+│       │   │   │       ├── empheq.js
+│       │   │   │       ├── enclose.js
+│       │   │   │       ├── extpfeil.js
+│       │   │   │       ├── gensymb.js
+│       │   │   │       ├── html.js
+│       │   │   │       ├── mathtools.js
+│       │   │   │       ├── mhchem.js
+│       │   │   │       ├── newcommand.js
+│       │   │   │       ├── noerrors.js
+│       │   │   │       ├── noundefined.js
+│       │   │   │       ├── physics.js
+│       │   │   │       ├── require.js
+│       │   │   │       ├── setoptions.js
+│       │   │   │       ├── tagformat.js
+│       │   │   │       ├── textcomp.js
+│       │   │   │       ├── textmacros.js
+│       │   │   │       ├── unicode.js
+│       │   │   │       ├── upgreek.js
+│       │   │   │       └── verb.js
+│       │   │   ├── tex-base.js
+│       │   │   ├── tex-full.js
+│       │   │   └── tex.js
+│       │   ├── latest.js
+│       │   ├── loader.js
+│       │   ├── mml-chtml.js
+│       │   ├── mml-svg.js
+│       │   ├── node-main.js
+│       │   ├── output
+│       │   │   ├── chtml
+│       │   │   │   └── fonts
+│       │   │   │       ├── tex.js
+│       │   │   │       └── woff-v2
+│       │   │   │           ├── MathJax_AMS-Regular.woff
+│       │   │   │           ├── MathJax_Calligraphic-Bold.woff
+│       │   │   │           ├── MathJax_Calligraphic-Regular.woff
+│       │   │   │           ├── MathJax_Fraktur-Bold.woff
+│       │   │   │           ├── MathJax_Fraktur-Regular.woff
+│       │   │   │           ├── MathJax_Main-Bold.woff
+│       │   │   │           ├── MathJax_Main-Italic.woff
+│       │   │   │           ├── MathJax_Main-Regular.woff
+│       │   │   │           ├── MathJax_Math-BoldItalic.woff
+│       │   │   │           ├── MathJax_Math-Italic.woff
+│       │   │   │           ├── MathJax_Math-Regular.woff
+│       │   │   │           ├── MathJax_SansSerif-Bold.woff
+│       │   │   │           ├── MathJax_SansSerif-Italic.woff
+│       │   │   │           ├── MathJax_SansSerif-Regular.woff
+│       │   │   │           ├── MathJax_Script-Regular.woff
+│       │   │   │           ├── MathJax_Size1-Regular.woff
+│       │   │   │           ├── MathJax_Size2-Regular.woff
+│       │   │   │           ├── MathJax_Size3-Regular.woff
+│       │   │   │           ├── MathJax_Size4-Regular.woff
+│       │   │   │           ├── MathJax_Typewriter-Regular.woff
+│       │   │   │           ├── MathJax_Vector-Bold.woff
+│       │   │   │           ├── MathJax_Vector-Regular.woff
+│       │   │   │           └── MathJax_Zero.woff
+│       │   │   ├── chtml.js
+│       │   │   ├── svg
+│       │   │   │   └── fonts
+│       │   │   │       └── tex.js
+│       │   │   └── svg.js
+│       │   ├── sre
+│       │   │   └── mathmaps
+│       │   │       ├── base.json
+│       │   │       ├── ca.json
+│       │   │       ├── da.json
+│       │   │       ├── de.json
+│       │   │       ├── en.json
+│       │   │       ├── es.json
+│       │   │       ├── fr.json
+│       │   │       ├── hi.json
+│       │   │       ├── it.json
+│       │   │       ├── nb.json
+│       │   │       ├── nemeth.json
+│       │   │       ├── nn.json
+│       │   │       └── sv.json
+│       │   ├── startup.js
+│       │   ├── tex-chtml-full-speech.js
+│       │   ├── tex-chtml-full.js
+│       │   ├── tex-chtml.js
+│       │   ├── tex-mml-chtml.js
+│       │   ├── tex-mml-svg.js
+│       │   ├── tex-svg-full.js
+│       │   ├── tex-svg.js
+│       │   └── ui
+│       │       ├── lazy.js
+│       │       ├── menu.js
+│       │       └── safe.js
+│       └── package.json
+└── resources.qrc
+
+33 directories, 174 files
