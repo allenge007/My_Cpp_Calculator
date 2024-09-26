@@ -82,8 +82,24 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QPushButton *calculateButton = new QPushButton("Calculate", this);
     connect(calculateButton, &QPushButton::clicked, this, &MainWindow::on_calculateButtonClicked);
 
+    // 增加点击效果
+    connect(calculateButton, &QPushButton::pressed, [=]() {
+        calculateButton->setStyleSheet("background-color: lightgray;");
+    });
+    connect(calculateButton, &QPushButton::released, [=]() {
+        calculateButton->setStyleSheet("");
+    });
+
     QPushButton *numericCalculateButton = new QPushButton("Numeric Calculate", this); // 新增数值计算按钮
     connect(numericCalculateButton, &QPushButton::clicked, this, &MainWindow::on_numericCalculateButtonClicked);
+
+    // 增加点击效果
+    connect(numericCalculateButton, &QPushButton::pressed, [=]() {
+        numericCalculateButton->setStyleSheet("background-color: lightgray;");
+    });
+    connect(numericCalculateButton, &QPushButton::released, [=]() {
+        numericCalculateButton->setStyleSheet("");
+    });
 
     connect(expr_entry, &QLineEdit::returnPressed, this, &MainWindow::on_calculateButtonClicked);
 
@@ -122,6 +138,12 @@ QWidget* MainWindow::createButtonGrid() {
         int col = pos % 5;
         layout->addWidget(button, row, col);
         connect(button, &QPushButton::clicked, this, &MainWindow::on_buttonClicked);
+        connect(button, &QPushButton::pressed, [=]() {
+            button->setStyleSheet("background-color: lightgray;");
+        });
+        connect(button, &QPushButton::released, [=]() {
+            button->setStyleSheet("");
+        });
         pos++;
     }
 
