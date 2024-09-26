@@ -1,3 +1,7 @@
+# My_Cpp_Calculator
+
+A visual symbolic and numeric calculator implemented in C++.
+
 ## Table of Contents
 
 - [Running](#running)
