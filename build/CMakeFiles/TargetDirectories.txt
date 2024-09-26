@@ -1,0 +1,4 @@
+/home/allenge/MyProject/Project1/build/CMakeFiles/SymbolicCalculator.dir
+/home/allenge/MyProject/Project1/build/CMakeFiles/edit_cache.dir
+/home/allenge/MyProject/Project1/build/CMakeFiles/rebuild_cache.dir
+/home/allenge/MyProject/Project1/build/CMakeFiles/SymbolicCalculator_autogen.dir

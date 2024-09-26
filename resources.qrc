@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/">
+        <file>resources/MathJax/MathJax.js</file>
+        <!-- 添加其他MathJax文件 -->
+    </qresource>
+</RCC>
