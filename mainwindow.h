@@ -25,6 +25,8 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     std::string trans(std ::string);
+    void renderLatexToLabel(QLabel *label, const QString &latex);
+    QString
 
 private slots:
     void on_buttonClicked();
@@ -37,6 +39,7 @@ private:
     QLineEdit *expr_entry;
     QTextEdit *result_text_edit;
     QWidget *createButtonGrid();
+    QLabel *latex_label; // 添加 QLabel 成员变量
     void display_result(const std::string &result);
 };
 

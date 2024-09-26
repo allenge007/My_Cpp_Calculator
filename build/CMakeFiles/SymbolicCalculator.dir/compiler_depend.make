@@ -1301,9 +1301,21 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o: ../mainwindow.cpp \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QStatusBar \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qstatusbar.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QWidget \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QProcess \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qprocess.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
   /usr/local/include/symengine/parser.h \
   /usr/local/include/symengine/derivative.h \
   /usr/local/include/symengine/visitor.h \
@@ -1352,8 +1364,6 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o: ../mainwindow.cpp \
 
 /usr/local/include/symengine/matrices/immutable_dense_matrix.h:
 
-/usr/local/include/symengine/matrices/matrix_symbol.h:
-
 /usr/local/include/symengine/matrices/zero_matrix.h:
 
 /usr/local/include/symengine/matrices/size.h:
@@ -1380,11 +1390,29 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o: ../mainwindow.cpp \
 
 /usr/local/include/symengine/visitor.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h:
+
+/usr/local/include/symengine/matrices/matrix_symbol.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QFile:
+
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmessagebox.h:
 
 /usr/local/include/symengine/polys/uratpoly.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QMessageBox:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qprocess.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qactiongroup.h:
 
@@ -1480,6 +1508,8 @@ SymbolicCalculator_autogen/include/ui_mainwindow.h:
 
 /usr/include/x86_64-linux-gnu/bits/fp-fast.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug:
+
 /usr/include/x86_64-linux-gnu/bits/fp-logb.h:
 
 /usr/include/x86_64-linux-gnu/bits/flt-eval-method.h:
@@ -1573,6 +1603,8 @@ SymbolicCalculator_autogen/include/ui_mainwindow.h:
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qrgb.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtGui/qcolor.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qsize.h:
 
@@ -2060,6 +2092,8 @@ SymbolicCalculator_autogen/mocs_compilation.cpp:
 
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h:
+
 /usr/local/include/symengine/mp_wrapper.h:
 
 /usr/include/c++/11/bits/predefined_ops.h:
@@ -2185,6 +2219,8 @@ SymbolicCalculator_autogen/mocs_compilation.cpp:
 /usr/include/c++/11/bits/basic_string.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qrefcount.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QProcess:
 
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qmenubar.h:
 
