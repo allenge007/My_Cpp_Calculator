@@ -11,6 +11,7 @@
 #include <QFile>
 #include <QDebug>
 #include <QRegularExpression>
+#include <QMap>
 #include <symengine/expression.h>
 #include <symengine/parser.h>
 #include <symengine/derivative.h>
@@ -69,7 +70,8 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     this->setStyleSheet(styleSheet);
 
     QVBoxLayout *layout = new QVBoxLayout;
-    expr_entry = new QLineEdit(this);
+    expr_entry = new CustomLineEdit(this);
+    expr_entry->setButtonMap(&buttonMap); // 设置按钮映射
     result_text_edit = new QTextEdit(this);
     latex_label = new QLabel(this); // 初始化 QLabel
     result_text_edit->setReadOnly(true);
@@ -117,6 +119,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     centralWidget->setLayout(layout);
     setCentralWidget(centralWidget);
     renderLatexToLabel(latex_label, "\LaTeX");
+
+    // 设置焦点策略
+    setFocusPolicy(Qt::StrongFocus);
 }
 
 MainWindow::~MainWindow() {
@@ -144,6 +149,9 @@ QWidget* MainWindow::createButtonGrid() {
         connect(button, &QPushButton::released, [=]() {
             button->setStyleSheet("");
         });
+
+        buttonMap[text] = button;
+
         pos++;
     }
 

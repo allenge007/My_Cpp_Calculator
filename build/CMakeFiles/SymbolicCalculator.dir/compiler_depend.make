@@ -424,7 +424,19 @@ CMakeFiles/SymbolicCalculator.dir/SymbolicCalculator_autogen/mocs_compilation.cp
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qtextedit.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QSet \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
 
 CMakeFiles/SymbolicCalculator.dir/main.cpp.o: ../main.cpp \
   /usr/include/stdc-predef.h \
@@ -849,10 +861,21 @@ CMakeFiles/SymbolicCalculator.dir/main.cpp.o: ../main.cpp \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QSet \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h \
@@ -1281,13 +1304,24 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o: ../mainwindow.cpp \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/QSet \
+  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   SymbolicCalculator_autogen/include/ui_mainwindow.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h \
   /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h \
@@ -1308,11 +1342,9 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o: ../mainwindow.cpp \
   /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h \
-  /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression \
   /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h \
@@ -1394,15 +1426,9 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o: ../mainwindow.cpp \
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h:
-
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h:
-
-/usr/local/include/symengine/matrices/matrix_symbol.h:
-
-/usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile:
 
@@ -1424,9 +1450,19 @@ SymbolicCalculator_autogen/include/ui_mainwindow.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QSet:
+
+/usr/local/include/symengine/matrices/matrix_symbol.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h:
+
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h:
 
-/usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h:
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h:
 
@@ -1638,6 +1674,8 @@ SymbolicCalculator_autogen/include/ui_mainwindow.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h:
+
 /usr/local/include/symengine/symengine_assert.h:
 
 /usr/include/x86_64-linux-gnu/qt5/QtCore/qscopedpointer.h:
@@ -1692,6 +1730,8 @@ SymbolicCalculator_autogen/include/ui_mainwindow.h:
 
 /usr/include/c++/11/bits/stl_pair.h:
 
+/usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent:
+
 /usr/include/x86_64-linux-gnu/bits/setjmp.h:
 
 /usr/include/time.h:
@@ -1705,6 +1745,8 @@ SymbolicCalculator_autogen/include/ui_mainwindow.h:
 /usr/include/c++/11/bits/basic_ios.h:
 
 /usr/include/c++/11/bits/uniform_int_dist.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h:
 
 /usr/include/x86_64-linux-gnu/bits/cpu-set.h:
 
@@ -1759,6 +1801,8 @@ SymbolicCalculator_autogen/include/ui_mainwindow.h:
 /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractbutton.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/locale_t.h:
+
+/usr/include/x86_64-linux-gnu/qt5/QtCore/QMap:
 
 /usr/include/c++/11/bits/locale_facets.tcc:
 

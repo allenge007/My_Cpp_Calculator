@@ -426,6 +426,18 @@ CMakeFiles/SymbolicCalculator.dir/SymbolicCalculator_autogen/mocs_compilation.cp
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QSet
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
 
 CMakeFiles/SymbolicCalculator.dir/main.cpp.o
  /home/allenge/MyProject/Project1/main.cpp
@@ -851,10 +863,21 @@ CMakeFiles/SymbolicCalculator.dir/main.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QSet
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h
@@ -1284,13 +1307,24 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qabstractscrollarea.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qtextdocument.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qurl.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/QKeyEvent
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qvector2d.h
+ /usr/include/x86_64-linux-gnu/qt5/QtGui/qtouchdevice.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QMap
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qmap.h
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/QSet
+ /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
  /home/allenge/MyProject/Project1/build/SymbolicCalculator_autogen/include/ui_mainwindow.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QVariant
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qvariant.h
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/QApplication
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qapplication.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreapplication.h
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qcoreevent.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qeventloop.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qguiapplication.h
  /usr/include/x86_64-linux-gnu/qt5/QtGui/qinputmethod.h
@@ -1311,11 +1345,9 @@ CMakeFiles/SymbolicCalculator.dir/mainwindow.cpp.o
  /usr/include/x86_64-linux-gnu/qt5/QtWidgets/qdialog.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QFile
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qfile.h
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qfiledevice.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QDebug
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qdebug.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qtextstream.h
- /usr/include/x86_64-linux-gnu/qt5/QtCore/qset.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qcontiguouscache.h
  /usr/include/x86_64-linux-gnu/qt5/QtCore/QRegularExpression
  /usr/include/x86_64-linux-gnu/qt5/QtCore/qregularexpression.h
