@@ -147,21 +147,6 @@ CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 //Value Computed by CMake
 CMAKE_PROJECT_NAME:STATIC=SymbolicCalculator
 
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION:STATIC=0.1
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_MAJOR:STATIC=0
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_MINOR:STATIC=1
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_PATCH:STATIC=
-
-//Value Computed by CMake
-CMAKE_PROJECT_VERSION_TWEAK:STATIC=
-
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/usr/bin/ranlib
 
@@ -224,38 +209,17 @@ CMAKE_STRIP:FILEPATH=/usr/bin/strip
 // Studio IDE projects all commands are done without /nologo.
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
-//Value Computed by CMake
-Project1_BINARY_DIR:STATIC=/home/allenge/MyProject/Project1/build
-
-//Value Computed by CMake
-Project1_IS_TOP_LEVEL:STATIC=ON
-
-//Value Computed by CMake
-Project1_SOURCE_DIR:STATIC=/home/allenge/MyProject/Project1
-
-//The directory containing a CMake configuration file for QT.
-QT_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
-
 //The directory containing a CMake configuration file for Qt5Core.
 Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
 
 //The directory containing a CMake configuration file for Qt5Gui.
 Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
 
-//The directory containing a CMake configuration file for Qt5LinguistTools.
-Qt5LinguistTools_DIR:PATH=Qt5LinguistTools_DIR-NOTFOUND
-
 //The directory containing a CMake configuration file for Qt5Widgets.
 Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
 
 //The directory containing a CMake configuration file for Qt5.
 Qt5_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5
-
-//Skip finding dependencies
-SYMENGINE_SKIP_DEPENDENCIES:BOOL=no
-
-//The directory containing a CMake configuration file for SymEngine.
-SymEngine_DIR:PATH=/usr/local/lib/cmake/symengine
 
 //Value Computed by CMake
 SymbolicCalculator_BINARY_DIR:STATIC=/home/allenge/MyProject/Project1/build
