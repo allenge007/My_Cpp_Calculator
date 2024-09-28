@@ -20,9 +20,15 @@ To run the project, follow these steps:
     ```
 2. Navigate to the project directory:
     ```bash
+    mkdir build
     cd build
     ```
-3. Run the project:
+3. Compile the project:
+    ```bash
+    cmake ..
+    make
+    ```
+4. Run the project:
     ```bash
     ./SymbolicCalculator
     ```
