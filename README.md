@@ -5,7 +5,7 @@ A visual symbolic and numeric calculator implemented in C++.
 ## Table of Contents
 
 - [Running](#running)
-- [Functions](#Function)
+- [Functions](#Functions)
 - [Code](#code)
 - [References](#References)
 - [License](#license)

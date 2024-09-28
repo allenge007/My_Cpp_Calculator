@@ -93,6 +93,7 @@ private:
     QLabel *latex_label; // 添加 QLabel 成员变量
     void display_result(const std::string &result);
     std::string trans(std ::string);
+    std::string trans_latex(std::string);
     void renderLatexToLabel(QLabel *label, const QString &latex);
 };
 #endif // MAINWINDOW_H

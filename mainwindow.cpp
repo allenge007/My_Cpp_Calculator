@@ -169,13 +169,48 @@ std::string MainWindow::trans(std::string str) {
 
     pos = 0;
     while ((pos = str.find('*', pos)) != std::string::npos) {
-        if (pos < str.size() - 1 && isalpha(str[pos + 1])) {
+        if (pos < str.size() - 1 && (str[pos + 1] == 'x'  || str[pos + 1] == 'y' || str[pos +  1] == 'z')) {
             str.erase(pos, 1);
         } else {
             pos += 1;
         }
     }
+    return str;
+}
 
+std::string MainWindow::trans_latex(std::string str) {
+    int pos = 0;
+    while ((pos = str.find("log", pos)) != std::string::npos) {
+        str.replace(pos, 3, "\\log");
+        pos += 3; // 移动到下一个位置
+    }
+    
+    pos = 0;
+    while ((pos = str.find("sin", pos)) != std::string::npos) {
+        str.replace(pos, 3, "\\sin");
+        pos += 3; // 移动到下一个位置
+    }
+
+    pos = 0;
+    while ((pos = str.find("cos", pos)) != std::string::npos) {
+        str.replace(pos, 3, "\\cos");
+        pos += 3; // 移动到下一个位置
+    }
+
+    pos = 0;
+    while ((pos = str.find("tan", pos)) != std::string::npos) {
+        str.replace(pos, 3, "\\tan");
+        pos += 3; // 移动到下一个位置
+    }
+
+    pos = 0;
+    while ((pos = str.find('*', pos)) != std::string::npos) {
+        if (pos < str.size() - 1) {
+            str.erase(pos, 1);
+        } else {
+            pos += 1;
+        }
+    }
     return str;
 }
 
@@ -274,9 +309,10 @@ void MainWindow::on_numericCalculateButtonClicked() {
 void MainWindow::display_result(const std::string &result) {
     QString result_qstr = QString::fromStdString(result);
     result_text_edit->setPlainText(result_qstr);
-
+    result_qstr = QString::fromStdString(trans_latex(result));
+    std :: cerr << trans_latex(result) << std :: endl;
     // 使用正则表达式将 ^ 后面的数字用 {} 括起来
-    QString latex = QString::fromStdString(result);
+    QString latex = result_qstr;
     QRegularExpression expRegex(R"((\w+|\([^()]+\)|\{[^{}]+\})\^(\w+|\([^()]+\)|\{[^{}]+\}))");
     latex.replace(expRegex, "\\1^{\\2}");
 
