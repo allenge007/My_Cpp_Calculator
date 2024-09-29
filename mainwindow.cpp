@@ -22,8 +22,10 @@
 #include <symengine/sets.h>
 #include <symengine/symbol.h>
 #include <symengine/printers/latex.h>
-
-
+#define PY_SSIZE_T_CLEAN
+#undef slots
+#include <Python.h>
+#define slots Q_SLOTS
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
 
@@ -118,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QWidget *centralWidget = new QWidget(this);
     centralWidget->setLayout(layout);
     setCentralWidget(centralWidget);
-    renderLatexToLabel(latex_label, "\LaTeX");
+    renderLatexToLabel(latex_label, "\\LaTeX");
 
     // 设置焦点策略
     setFocusPolicy(Qt::StrongFocus);
@@ -279,12 +281,41 @@ void MainWindow::on_buttonClicked() {
             display_result(trans(SymEngine::str(*deri))); // 直接传递 std::string
         } else if(text == "∫") {
             QString expression = expr_entry->text();
-            QProcess process;
-            process.start("python3", QStringList() << "../integrate.py" << expression);
-            process.waitForFinished();
-            QString result = process.readAllStandardOutput().trimmed();
-            std :: cerr << result.toStdString() << std :: endl;
-            display_result(trans(result.toStdString()));
+        Py_Initialize();
+        PyObject* pName = PyUnicode_DecodeFSDefault("sympy");
+        PyObject* pModule = PyImport_Import(pName);
+        Py_DECREF(pName);
+
+        if (pModule != nullptr) {
+            PyObject* pDict = PyModule_GetDict(pModule);
+            PyObject* pFunc = PyDict_GetItemString(pDict, "integrate");
+
+            if (PyCallable_Check(pFunc)) {
+                PyObject* pSympy = PyDict_GetItemString(pDict, "Symbol");
+                PyObject* pVar = PyObject_CallFunction(pSympy, "s", "x");
+                PyObject* pArgs = PyTuple_Pack(2, PyUnicode_FromString(expression.toStdString().c_str()), pVar);
+                PyObject* pValue = PyObject_CallObject(pFunc, pArgs);
+                Py_DECREF(pArgs);
+                Py_DECREF(pVar);
+
+                if (pValue != nullptr) {
+                    PyObject* pStr = PyObject_Str(pValue);
+                    const char* result = PyUnicode_AsUTF8(pStr);
+                    std::cerr << result << std::endl;
+                    display_result(trans(result));
+                    Py_DECREF(pStr);
+                    Py_DECREF(pValue);
+                } else {
+                    PyErr_Print();
+                }
+            } else {
+                PyErr_Print();
+            }
+            Py_DECREF(pModule);
+        } else {
+            PyErr_Print();
+        }
+        Py_Finalize();
         } else {
             expr_entry->insert(text);
         }
