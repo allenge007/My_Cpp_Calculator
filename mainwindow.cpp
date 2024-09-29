@@ -120,7 +120,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     QWidget *centralWidget = new QWidget(this);
     centralWidget->setLayout(layout);
     setCentralWidget(centralWidget);
-    renderLatexToLabel(latex_label, "\\LaTeX");
+    renderLatexToLabel(latex_label, "LaTeX");
 
     // 设置焦点策略
     setFocusPolicy(Qt::StrongFocus);
@@ -216,6 +216,19 @@ std::string MainWindow::trans_latex(std::string str) {
     return str;
 }
 
+std::string MainWindow::trans_inv(std::string str) {
+    int pos = 0;
+    int lth = str.size();
+    while(pos < lth) {
+        if((str[pos] == 'x' || str[pos] == 'y' || str[pos] == 'z') && pos && (isdigit(str[pos - 1]) || str[pos - 1] == ')')) {
+            str.insert(pos, "*");
+            lth++, pos++;
+        }
+        pos++;
+    }
+    return str;
+}
+
 void MainWindow::renderLatexToLabel(QLabel *label, const QString &latex) {
     QFile::remove("latex.png");
     // 使用正则表达式将除法替换为分数形式
@@ -254,6 +267,40 @@ void MainWindow::renderLatexToLabel(QLabel *label, const QString &latex) {
     }
 }
 
+void MainWindow :: Integrate() {
+    QString expression = expr_entry->text();
+    std :: string expr = trans_inv(expression.toStdString());
+    Py_Initialize();
+    PyObject* pName = PyUnicode_DecodeFSDefault("sympy");
+    PyObject* pModule = PyImport_Import(pName);
+    Py_DECREF(pName);
+    if(pModule == nullptr) return PyErr_Print(), Py_Finalize(), void();
+    if (pModule != nullptr) {
+        PyObject* pDict = PyModule_GetDict(pModule);
+        PyObject* pFunc = PyDict_GetItemString(pDict, "integrate");
+        if(!PyCallable_Check(pFunc)) return PyErr_Print(), Py_Finalize(), void();
+        if (PyCallable_Check(pFunc)) {
+            PyObject* pSympy = PyDict_GetItemString(pDict, "Symbol");
+            PyObject* pVar = PyObject_CallFunction(pSympy, "s", "x", "y", "z");
+            PyObject* pArgs = PyTuple_Pack(2, PyUnicode_FromString(expr.c_str()), pVar);
+            PyObject* pValue = PyObject_CallObject(pFunc, pArgs);
+            Py_DECREF(pArgs);
+            Py_DECREF(pVar);
+            if(pValue == nullptr) return PyErr_Print(), Py_Finalize(), void();
+            if (pValue != nullptr) {
+                PyObject* pStr = PyObject_Str(pValue);
+                const char* result = PyUnicode_AsUTF8(pStr);
+                std::cerr << result << std::endl;
+                display_result(trans(result));
+                Py_DECREF(pStr);
+                Py_DECREF(pValue);
+            }
+        }
+        Py_DECREF(pModule);
+    }
+    Py_Finalize();
+}
+
 void MainWindow::on_buttonClicked() {
     QPushButton *button = qobject_cast<QPushButton*>(sender());
     if (button) {
@@ -275,47 +322,12 @@ void MainWindow::on_buttonClicked() {
             }
         } else if(text == "d/dx") {
             QString expression = expr_entry->text();
-            SymEngine::Expression expr = SymEngine::parse(expression.toStdString());
+            SymEngine::Expression expr = SymEngine::parse(trans_inv(expression.toStdString()));
             SymEngine::RCP<const SymEngine::Symbol> x = SymEngine::symbol("x");
             auto deri = SymEngine::expand(SymEngine::diff(expr, x));
             display_result(trans(SymEngine::str(*deri))); // 直接传递 std::string
         } else if(text == "∫") {
-            QString expression = expr_entry->text();
-        Py_Initialize();
-        PyObject* pName = PyUnicode_DecodeFSDefault("sympy");
-        PyObject* pModule = PyImport_Import(pName);
-        Py_DECREF(pName);
-
-        if (pModule != nullptr) {
-            PyObject* pDict = PyModule_GetDict(pModule);
-            PyObject* pFunc = PyDict_GetItemString(pDict, "integrate");
-
-            if (PyCallable_Check(pFunc)) {
-                PyObject* pSympy = PyDict_GetItemString(pDict, "Symbol");
-                PyObject* pVar = PyObject_CallFunction(pSympy, "s", "x");
-                PyObject* pArgs = PyTuple_Pack(2, PyUnicode_FromString(expression.toStdString().c_str()), pVar);
-                PyObject* pValue = PyObject_CallObject(pFunc, pArgs);
-                Py_DECREF(pArgs);
-                Py_DECREF(pVar);
-
-                if (pValue != nullptr) {
-                    PyObject* pStr = PyObject_Str(pValue);
-                    const char* result = PyUnicode_AsUTF8(pStr);
-                    std::cerr << result << std::endl;
-                    display_result(trans(result));
-                    Py_DECREF(pStr);
-                    Py_DECREF(pValue);
-                } else {
-                    PyErr_Print();
-                }
-            } else {
-                PyErr_Print();
-            }
-            Py_DECREF(pModule);
-        } else {
-            PyErr_Print();
-        }
-        Py_Finalize();
+            Integrate();
         } else {
             expr_entry->insert(text);
         }
@@ -349,7 +361,7 @@ void MainWindow::display_result(const std::string &result) {
     QString result_qstr = QString::fromStdString(result);
     result_text_edit->setPlainText(result_qstr);
     result_qstr = QString::fromStdString(trans_latex(result));
-    std :: cerr << trans_latex(result) << std :: endl;
+    std :: cerr << result << " "  << trans_latex(result) << std :: endl;
     // 使用正则表达式将 ^ 后面的数字用 {} 括起来
     QString latex = result_qstr;
     QRegularExpression expRegex(R"((\w+|\([^()]+\)|\{[^{}]+\})\^(\w+|\([^()]+\)|\{[^{}]+\}))");

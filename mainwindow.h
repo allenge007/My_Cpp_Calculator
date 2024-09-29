@@ -94,6 +94,8 @@ private:
     void display_result(const std::string &result);
     std::string trans(std ::string);
     std::string trans_latex(std::string);
+    std::string trans_inv(std::string);
+    void Integrate();
     void renderLatexToLabel(QLabel *label, const QString &latex);
 };
 #endif // MAINWINDOW_H
