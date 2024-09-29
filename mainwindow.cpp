@@ -277,6 +277,14 @@ void MainWindow::on_buttonClicked() {
             SymEngine::RCP<const SymEngine::Symbol> x = SymEngine::symbol("x");
             auto deri = SymEngine::expand(SymEngine::diff(expr, x));
             display_result(trans(SymEngine::str(*deri))); // 直接传递 std::string
+        } else if(text == "∫") {
+            QString expression = expr_entry->text();
+            QProcess process;
+            process.start("python3", QStringList() << "../integrate.py" << expression);
+            process.waitForFinished();
+            QString result = process.readAllStandardOutput().trimmed();
+            std :: cerr << result.toStdString() << std :: endl;
+            display_result(trans(result.toStdString()));
         } else {
             expr_entry->insert(text);
         }
