@@ -12,6 +12,7 @@
 #include <QDebug>
 #include <QRegularExpression>
 #include <QMap>
+#include <QTimer>
 #include <symengine/expression.h>
 #include <symengine/parser.h>
 #include <symengine/derivative.h>
@@ -79,6 +80,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     result_text_edit->setReadOnly(true);
 
     latex_label->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
+    expr_entry->setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Preferred);
     // latex_label->setSizePolicy(result_text_edit->sizePolicy());
     // latex_label->setMinimumSize(result_text_edit->minimumSize());
     // latex_label->setMaximumSize(result_text_edit->maximumSize());
@@ -241,14 +243,31 @@ std::string MainWindow::trans_inv(std::string str) {
     return str;
 }
 
+void MainWindow::resizeEvent(QResizeEvent *event) {
+    QMainWindow::resizeEvent(event);
+    if (!resizeTimer) {
+        resizeTimer = new QTimer(this);
+        resizeTimer->setSingleShot(true);
+        connect(resizeTimer, &QTimer::timeout, this, &MainWindow::onResizeTimeout);
+    }
+    resizeTimer->start(200); // 延迟 200 毫秒后重新渲染
+}
+
+void MainWindow::onResizeTimeout() {
+    renderLatexToLabel(latex_label, "LaTeX");
+    on_calculateButtonClicked();
+}
+
 void MainWindow::renderLatexToLabel(QLabel *label, const QString &latex) {
     QFile::remove("latex.png");
     // 使用正则表达式将除法替换为分数形式
     QString processedLatex = latex;
 
     // 使用 matplotlib 渲染 LaTeX 字体
-    int width = 1600;
-    int height = 200;
+    // int width = 1600;
+    // int height = 200;
+    int width = label -> width() * 4 / 3;
+    int height = label -> height();
     QProcess process;
     process.start("python3", QStringList() << "-c" <<
                   "import matplotlib.pyplot as plt; "
@@ -347,6 +366,9 @@ void MainWindow::on_buttonClicked() {
 }
 
 void MainWindow::on_calculateButtonClicked() {
+    if(expr_entry->text().isEmpty()) {
+        return;
+    }
     QString expression = expr_entry->text();
     try {
         SymEngine::Expression expr = SymEngine::parse(expression.toStdString());

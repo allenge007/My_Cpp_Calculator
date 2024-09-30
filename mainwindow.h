@@ -15,6 +15,7 @@
 #include <QKeyEvent>
 #include <QMap>
 #include <QSet>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -85,6 +86,7 @@ private slots:
 
 private:
     QMap<QString, QPushButton*> buttonMap;
+    QTimer *resizeTimer;
     Ui::MainWindow *ui;
     SymEngine::Expression expr;
     CustomLineEdit *expr_entry;
@@ -97,5 +99,7 @@ private:
     std::string trans_inv(std::string);
     void Integrate();
     void renderLatexToLabel(QLabel *label, const QString &latex);
+    void resizeEvent(QResizeEvent *event) override;
+    void onResizeTimeout();
 };
 #endif // MAINWINDOW_H
