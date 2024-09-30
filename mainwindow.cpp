@@ -186,22 +186,34 @@ std::string MainWindow::trans_latex(std::string str) {
         str.replace(pos, 3, "\\log");
         pos += 3; // 移动到下一个位置
     }
-    
+
+    pos = 0;
+    while ((pos = str.find("tan", pos)) != std::string::npos) {
+        if(pos && str[pos - 1] == 'a') {
+            pos += 3;
+            continue;
+        }
+        str.replace(pos, 3, "\\tan");
+        pos += 3; // 移动到下一个位置
+    }
+
     pos = 0;
     while ((pos = str.find("sin", pos)) != std::string::npos) {
+        if(pos && str[pos - 1] == 'a') {
+            pos += 3;
+            continue;
+        }
         str.replace(pos, 3, "\\sin");
         pos += 3; // 移动到下一个位置
     }
 
     pos = 0;
     while ((pos = str.find("cos", pos)) != std::string::npos) {
+        if(pos && str[pos - 1] == 'a') {
+            pos += 3;
+            continue;
+        }
         str.replace(pos, 3, "\\cos");
-        pos += 3; // 移动到下一个位置
-    }
-
-    pos = 0;
-    while ((pos = str.find("tan", pos)) != std::string::npos) {
-        str.replace(pos, 3, "\\tan");
         pos += 3; // 移动到下一个位置
     }
 
@@ -364,7 +376,7 @@ void MainWindow::display_result(const std::string &result) {
     std :: cerr << result << " "  << trans_latex(result) << std :: endl;
     // 使用正则表达式将 ^ 后面的数字用 {} 括起来
     QString latex = result_qstr;
-    QRegularExpression expRegex(R"((\w+|\([^()]+\)|\{[^{}]+\})\^(\w+|\([^()]+\)|\{[^{}]+\}))");
+    QRegularExpression expRegex(R"((\w+|\([^()]+\)|\{[^{}]+\})\^(\d+|[xyz]))");
     latex.replace(expRegex, "\\1^{\\2}");
 
     // 使用正则表达式将除法替换为分数形式
