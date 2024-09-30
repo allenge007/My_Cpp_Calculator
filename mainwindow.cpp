@@ -183,7 +183,7 @@ std::string MainWindow::trans(std::string str) {
 }
 
 std::string MainWindow::trans_latex(std::string str) {
-    int pos = 0;
+    size_t pos = 0;
     while ((pos = str.find("log", pos)) != std::string::npos) {
         str.replace(pos, 3, "\\log");
         pos += 3; // 移动到下一个位置
@@ -396,8 +396,14 @@ void MainWindow::display_result(const std::string &result) {
     result_text_edit->setPlainText(result_qstr);
     result_qstr = QString::fromStdString(trans_latex(result));
     std :: cerr << result << " "  << trans_latex(result) << std :: endl;
-    // 使用正则表达式将 ^ 后面的数字用 {} 括起来
+
     QString latex = result_qstr;
+
+    // 使用正则表达式将小括号内的内容用大括号包起来，同时保留小括号，并将大括号包在小括号内
+    QRegularExpression parenthesesRegex(R"(\(([^()]+)\))");
+    latex.replace(parenthesesRegex, "{(\\1)}");
+
+    // 使用正则表达式将 ^ 后面的数字用 {} 括起来
     QRegularExpression expRegex(R"((\w+|\([^()]+\)|\{[^{}]+\})\^(\d+|[xyz]))");
     latex.replace(expRegex, "\\1^{\\2}");
 
